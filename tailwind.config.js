@@ -8,6 +8,10 @@ module.exports = {
       backgroundImage: {
         'gradient': 'linear-gradient(45deg, #ff6b6b, #4ecdc4)',
       },
+      colors: {
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+      },
       keyframes: {
         wave: {
           '0%': { transform: 'rotate(0.0deg)' },
@@ -25,5 +29,6 @@ module.exports = {
       }
     },
   },
+  darkMode: 'class',
   plugins: [require('tailwindcss-motion')],
 } 

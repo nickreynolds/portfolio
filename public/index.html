@@ -12,7 +12,17 @@
       content="developer portfolio"
     />
     <meta name="keyword" content="portfolio, javascript, developer, frontend, react, dev, front-end, tech, programmer">
-    <title>Developer Portfolio</title>
+    <title>Nick Reynolds Online</title>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        console.log('dark mode')
+        document.documentElement.classList.add('dark');
+      } else {
+        console.log('light mode')
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

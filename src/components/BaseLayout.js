@@ -9,24 +9,24 @@ export default function BaseLayout() {
    let [darkMode, setDarkMode] = useState(false);
 
    function handleToggleDarkMode() {
-      let oppositeOfCurrentDarkMode = !darkMode
-      console.log(oppositeOfCurrentDarkMode)
-      localStorage.setItem('darkMode', `${oppositeOfCurrentDarkMode}`)
-      setDarkMode(oppositeOfCurrentDarkMode)
+      const currentTheme = localStorage.getItem('theme');
+      let oppositeOfCurrentDarkMode = currentTheme === 'dark' ? 'light' : 'dark';
+      console.log(oppositeOfCurrentDarkMode);
+      if (oppositeOfCurrentDarkMode === 'dark') {
+         document.documentElement.classList.add('dark');
+      } else {
+         document.documentElement.classList.remove('dark');
+      }
+      setDarkMode(oppositeOfCurrentDarkMode === 'dark');
    }
 
    useEffect(() => {
-      let detectedDarkMode = localStorage.getItem('darkMode');
-
-      if (detectedDarkMode) {
-         setDarkMode(detectedDarkMode)
-      } else {
-         localStorage.setItem('darkMode', 'false')
-      }
+      const currentTheme = localStorage.getItem('theme');
+      setDarkMode(currentTheme === 'dark')
    }, [])
 
    return (
-      <div className={`min-h-screen w-full ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
+      <div className={`min-h-screen w-full bg-background text-foreground`}>
          <div className="flex flex-col min-h-screen justify-between">
             <div>
                <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode}/>
