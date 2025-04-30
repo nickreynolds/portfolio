@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import Style from './BaseLayout.module.scss'
 import Navbar from "./Navbar";
 import Home from "./home/Home";
 import About from "./about/About";
@@ -28,13 +27,12 @@ export default function BaseLayout() {
    }, [])
 
    return (
-      <Box className={darkMode ? Style.dark : Style.light}>
-         <Grid container display={'flex'} flexDirection={'column'} minHeight={'100vh'}
-               justifyContent={'space-between'}>
+      <Box className={`min-h-screen w-full ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
+         <Grid container className="flex flex-col min-h-screen justify-between">
             <Grid item>
                <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode}/>
             </Grid>
-            <Grid item flexGrow={1}>
+            <Grid item className="flex-grow">
                <Routes>
                   <Route exact path={'/'} element={<Home/>}/>
                   <Route exact path={'/about'} element={<About/>}/>
@@ -42,8 +40,7 @@ export default function BaseLayout() {
                </Routes>
             </Grid>
             <Grid item>
-               <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
-                    py={'1.5rem'} sx={{opacity: 0.7}} width={'100%'}>
+               <Box component={'footer'} className="flex flex-col items-center py-6 opacity-70 w-full">
                </Box>
             </Grid>
          </Grid>

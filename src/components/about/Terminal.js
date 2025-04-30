@@ -1,6 +1,4 @@
 import React from 'react';
-import Style from "./Terminal.module.scss";
-import classNames from "classnames";
 import {Box} from "@mui/material";
 
 const iconClass = "fa fa-circle";
@@ -9,16 +7,15 @@ function Terminal(props) {
    const {text} = props;
 
    return (
-      <Box component={'section'} className={classNames(Style.terminal, Style.shadowed)}
-           width={{xs: '80%', md: '50%'}} borderRadius={'0.5rem'} mb={'4rem'}>
-         <Box sx={{backgroundColor: '#8c8c8c'}} p={'0.5rem'} borderRadius={'0.5rem 0.5rem 0 0'}
-              fontSize={'1rem'}>
-            <i className={classNames(iconClass, Style.red)}/>
-            <i className={classNames(iconClass, Style.amber)}/>
-            <i className={classNames(iconClass, Style.green)}/>
+      <Box component={'section'} 
+           className="w-[80%] md:w-1/2 rounded-lg mb-16 shadow-lg bg-[#27242f]"
+           borderRadius={'0.5rem'}>
+         <Box className="bg-[#8c8c8c] p-2 rounded-t-lg text-base">
+            <i className={`${iconClass} text-red-500`}/>
+            <i className={`${iconClass} text-yellow-500`}/>
+            <i className={`${iconClass} text-green-500`}/>
          </Box>
-         <Box py={{xs: '1rem', md: '2rem'}} px={{xs: '2rem', md: '3rem'}} borderRadius={'0 0 0.5rem 0.5rem'}
-              sx={{backgroundColor: '#27242f'}} fontSize={'1.5rem'} fontFamily={'Courier New, Courier, monospace'}>
+         <Box className="py-4 md:py-8 px-8 md:px-12 rounded-b-lg text-xl font-mono">
             {text}
          </Box>
       </Box>

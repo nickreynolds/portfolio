@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .avatar {
+    @apply rounded-full p-3 shadow-lg;
+  }
+  
+  .hand {
+    @apply inline-block animate-wave;
+  }
+} 
