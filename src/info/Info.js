@@ -29,8 +29,8 @@ export const info = {
     baseColor: colors[0],
     miniBio: [ // these are just some "tidbits" about yourself. You can look at mine https://paytonjewell.github.io/#/ for an example if you'd like
         {
-            emoji: '🕵️',
-            text: 'building Agency'
+            emoji: '👦🏻',
+            text: 'building Apps for People'
         },
         {
             emoji: '🌎',
@@ -38,7 +38,7 @@ export const info = {
         },
         {
             emoji: "💼",
-            text: "Identity Lead at Consensys"
+            text: "Looking for work"
         },
         {
             emoji: "📧",
@@ -60,10 +60,10 @@ export const info = {
 // Just change the links so that they lead to your social profiles.
 
     ],
-    bio: "Hi! I'm Nick. I lead Identity R&D at Consensys Mesh, studied Digital Media Design at the University of Pennsylvania, and work to build a better internet, with more agency, using verifiable data.",
+    bio: "Hi! I'm Nick. I led Identity R&D at Consensys Mesh, studied Digital Media Design at the University of Pennsylvania, and work to build a better internet with more agency.",
     skills:
         {
-            proficientWith: ['javascript', 'nodejs', 'react (browser & mobile)', 'typescript', 'solidity', 'golang'],
+            proficientWith: ['javascript', 'typescript', 'nodejs', 'react', 'react-native', 'solidity', 'golang'],
             exposedTo: ['rust', 'python']
         }
     ,

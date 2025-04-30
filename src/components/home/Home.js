@@ -10,7 +10,7 @@ export default function Home() {
       <div className="flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-175px)] motion-preset-slide-down">
          <img 
             className="avatar shadow-lg"
-            alt={'image of developer'} 
+            alt={'Nick Reynolds headshot'} 
             src={me} 
             style={{
                background: info.gradient,
