@@ -7,7 +7,7 @@ import {info} from "../../info/Info";
 
 export default function Home() {
    return (
-      <div className="flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-175px)]">
+      <div className="flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-175px)] motion-preset-slide-down">
          <img 
             className="avatar shadow-lg"
             alt={'image of developer'} 
@@ -33,11 +33,15 @@ export default function Home() {
             </h1>
             <h2 className="text-2xl mb-6">I'm {info.position}.</h2>
             <ul className="p-4">
-               {info.miniBio.map((bio, index) => (
-                  <EmojiBullet key={index} emoji={bio.emoji} text={bio.text}/>
-               ))}
+               {info.miniBio.map((bio, index) => {
+                  const delay = index * 0.1;
+                  return (
+                  <div key={`${bio.emoji}`} style={{animationDelay: `${delay}s`}} className="motion-preset-slide-left">
+                     <EmojiBullet key={index} emoji={bio.emoji} text={bio.text}/>
+                  </div>
+               )})}
             </ul>
-            <div className="flex gap-6 justify-center text-4xl md:text-5xl">
+            <div className="flex gap-6 justify-center text-4xl md:text-5xl motion-opacity-in-[0%] motion-duration-[1s]/opacity motion-delay-[0.5s]/opacity">
                {info.socials.map((social, index) => (
                   <SocialIcon key={index} link={social.link} icon={social.icon} label={social.label} />
                ))}
