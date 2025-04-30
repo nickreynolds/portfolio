@@ -27,20 +27,20 @@ export default function BaseLayout() {
 
    return (
       <div className={`min-h-screen w-full ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
-         <div container className="flex flex-col min-h-screen justify-between">
-            <div item>
+         <div className="flex flex-col min-h-screen justify-between">
+            <div>
                <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode}/>
             </div>
-            <div item className="flex-grow">
+            <div className="flex-grow">
                <Routes>
                   <Route exact path={'/'} element={<Home/>}/>
                   <Route exact path={'/about'} element={<About/>}/>
                   <Route exact path={'/portfolio'} element={<Portfolio/>}/>
                </Routes>
             </div>
-            <div item>
-               <div component={'footer'} className="flex flex-col items-center py-6 opacity-70 w-full">
-               </div>
+            <div>
+               <footer className="flex flex-col items-center py-6 opacity-70 w-full">
+               </footer>
             </div>
          </div>
       </div>

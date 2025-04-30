@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Toggler from "./home/Toggler";
 import {Link, useLocation} from "react-router-dom";
-import {Box} from "@mui/material";
 import {info} from "../info/Info";
 
 const links = [
@@ -33,10 +32,10 @@ export default function Navbar({darkMode, handleClick}) {
     const [active, setActive] = useState(location.pathname === '/' ? 'home' : location.pathname.slice(1, location.pathname.length));
 
     return (
-        <Box component={'nav'} className="w-full">
-            <Box component={'ul'} className="flex justify-center items-center gap-8 md:gap-32 lowercase text-base">
+        <nav className="w-full">
+            <ul className="flex justify-center items-center gap-8 md:gap-32 lowercase text-base">
                 {links.map((link, index) => (
-                    <Box key={index} component={'li'} 
+                    <li key={index} 
                          className={`${link.active === active && !link.type ? 'border-b-2 border-gradient' : ''}`}
                          style={{borderImageSource: info.gradient}}>
                         <Link to={link.to} 
@@ -45,12 +44,12 @@ export default function Navbar({darkMode, handleClick}) {
                             {!link.type && <p className="py-2">{link.name}</p>}
                             {link.type && <h1>{link.name}</h1>}
                         </Link>
-                    </Box>
+                    </li>
                 ))}
                 <li>
                     <Toggler darkMode={darkMode} handleClick={handleClick}/>
                 </li>
-            </Box>
-        </Box>
+            </ul>
+        </nav>
     )
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import Terminal from "./Terminal";
-import {Box} from "@mui/material";
 import {info} from "../../info/Info";
 
 export default function About() {
@@ -42,17 +41,17 @@ export default function About() {
                 className="text-green-500">(main)</span> $</span> ls</p>
             <ul>
                 {info.hobbies.map((hobby, index) => (
-                    <li key={index} className="flex items-center"><Box component={'span'} className="mr-4">{hobby.emoji}</Box>{hobby.label}</li>
+                    <li key={index} className="flex items-center"><span className="mr-4">{hobby.emoji}</span>{hobby.label}</li>
                 ))}
             </ul>
         </>;
     }
 
     return (
-        <Box className="flex flex-col items-center mt-12">
+        <div className="flex flex-col items-center mt-12">
             <Terminal text={aboutMeText()}/>
             <Terminal text={skillsText()}/>
             <Terminal text={miscText()}/>
-        </Box>
+        </div>
     )
 }
