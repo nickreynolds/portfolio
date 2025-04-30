@@ -4,7 +4,6 @@ import Home from "./home/Home";
 import About from "./about/About";
 import Portfolio from "./portfolio/Portfolio";
 import {Route, Routes} from "react-router-dom";
-import {Box, Grid} from "@mui/material";
 
 export default function BaseLayout() {
    let [darkMode, setDarkMode] = useState(false);
@@ -27,24 +26,24 @@ export default function BaseLayout() {
    }, [])
 
    return (
-      <Box className={`min-h-screen w-full ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
-         <Grid container className="flex flex-col min-h-screen justify-between">
-            <Grid item>
+      <div className={`min-h-screen w-full ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
+         <div container className="flex flex-col min-h-screen justify-between">
+            <div item>
                <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode}/>
-            </Grid>
-            <Grid item className="flex-grow">
+            </div>
+            <div item className="flex-grow">
                <Routes>
                   <Route exact path={'/'} element={<Home/>}/>
                   <Route exact path={'/about'} element={<About/>}/>
                   <Route exact path={'/portfolio'} element={<Portfolio/>}/>
                </Routes>
-            </Grid>
-            <Grid item>
-               <Box component={'footer'} className="flex flex-col items-center py-6 opacity-70 w-full">
-               </Box>
-            </Grid>
-         </Grid>
-      </Box>
+            </div>
+            <div item>
+               <div component={'footer'} className="flex flex-col items-center py-6 opacity-70 w-full">
+               </div>
+            </div>
+         </div>
+      </div>
    )
 }
 
